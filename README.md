@@ -1,7 +1,6 @@
-# ubuntu_post_installation
-Ubuntu post installation script to install some apps and setup android build environment.
+Post installation script to install some apps and setup android build environment for ubuntu.
 
-Usage:
+UBUNTU-      
 Download script    
 Open terminal    
 cd (to the directory where file is)      
