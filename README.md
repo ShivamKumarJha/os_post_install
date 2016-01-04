@@ -5,4 +5,4 @@ Download script
 Open terminal    
 cd (to the directory where file is)      
 chmod a+x ubuntu.sh      
-sudo ubuntu.sh      
+sudo ./ubuntu.sh      
