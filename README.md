@@ -4,5 +4,5 @@ UBUNTU-
 Download script    
 Open terminal    
 cd (to the directory where file is)      
-chmod a+x install.sh      
-sudo install.sh      
+chmod a+x ubuntu.sh      
+sudo ubuntu.sh      
