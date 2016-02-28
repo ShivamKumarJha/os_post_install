@@ -36,6 +36,7 @@ rm -f playdeb_0.3-1~getdeb1_all.deb
 apt-get update -y
 
 echo -e "$yellow Installing applications..."
+apt-get install -y maven
 apt-get install -y adobe-flashplugin
 apt-get install -y vlc 
 apt-get install -y vlc-plugin-libde265
