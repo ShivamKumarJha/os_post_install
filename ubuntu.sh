@@ -2,6 +2,21 @@
 
 yellow='\033[0;33m'
 
+echo -e "$yellow Adding Repositories"
+add-apt-repository -y ppa:webupd8team/pulseaudio-eq
+add-apt-repository -y ppa:nilarimogard/webupd8
+add-apt-repository -y ppa:videolan/stable-daily
+add-apt-repository -y ppa:bumblebee/stable
+add-apt-repository -y ppa:xorg-edgers/ppa
+add-apt-repository -y ppa:otto-kesselgulasch/gimp
+add-apt-repository -y ppa:gnome3-team/gnome3
+apt-add-repository -y ppa:strukturag/libde265 
+add-apt-repository -y ppa:webupd8team/y-ppa-manager
+apt-add-repository -y 'deb http://liveusb.info/multisystem/depot all main'
+add-apt-repository -y 'deb http://dl.google.com/linux/chrome/deb/ stable main'
+
+apt-get update -y --force-yes 
+
 echo -e "$yellow Installing applications..."
 apt-get install -y --force-yes adobe-flashplugin
 apt-get install -y --force-yes vlc 
@@ -25,13 +40,15 @@ apt-get install -y --force-yes mpack
 apt-get install -y --force-yes arj 
 apt-get install -y --force-yes cabextract 
 apt-get install -y --force-yes transmission
-apt-get install -y --force-yes clementine
 apt-get install -y --force-yes geany
 apt-get install -y --force-yes gparted
 apt-get install -y --force-yes udisks
 apt-get install -y --force-yes simplescreenrecorder
 
 echo -e "$yellow Setting up Android Build Environment..."
+mkdir -p ~/bin
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
 apt-get install -y --force-yes phablet-tools
 apt-get install -y --force-yes repo
 apt-get install -y --force-yes maven
@@ -116,8 +133,9 @@ apt-get install -y --force-yes ubuntu-restricted-extras
 
 apt-get -f --force-yes update
 
-echo -e "$yellow Removal of default useless apps."
-apt-get remove -y --force-yes --purge rhythmbox ekiga totem* ubuntu-one* unity-lens-music unity-lens-friends unity-lens-photos unity-lens-video thunderbird* apport
+echo -e "$yellow Removal of default unrequired apps."
+apt-get remove -y --force-yes rhythmbox ekiga totem* ubuntu-one* unity-lens-music unity-lens-friends unity-lens-photos unity-lens-video thunderbird* apport
+apt-get remove -y --force-yes firefox
 
 echo -e "$yellow Removal of NSA PRISM search tools provided by unity."
 gsettings set com.canonical.Unity.Lenses remote-content-search none
@@ -145,3 +163,4 @@ pactl load-module module-equalizer-sink
 pactl load-module module-dbus-protocol
 rm -rf ~/.config/pulse
 rm -rf ~/.pulse
+
