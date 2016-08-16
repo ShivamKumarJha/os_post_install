@@ -52,6 +52,7 @@ chmod a+x ~/bin/repo
 apt-get install -y --force-yes phablet-tools
 apt-get install -y --force-yes repo
 apt-get install -y --force-yes maven
+apt-get install -y --force-yes subversion
 apt-get install -y --force-yes libcap-dev texinfo
 apt-get install -y --force-yes python-pip
 pip install backports.ssl_match_hostname
