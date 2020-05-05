@@ -1,0 +1,8 @@
+christian-kohler.path-intellisense
+CoenraadS.bracket-pair-colorizer
+esbenp.prettier-vscode
+ms-python.python
+ms-vscode.cpptools
+naumovs.color-highlight
+vscode-icons-team.vscode-icons
+wayou.vscode-todo-highlight

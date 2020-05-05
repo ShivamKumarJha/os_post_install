@@ -1,0 +1,13 @@
+android-file-transfer
+angry-ip-scanner
+geany
+google-chrome
+iterm2
+java
+libreoffice
+opera
+qbittorrent
+telegram-desktop
+visual-studio-code
+vlc
+whatsapp

@@ -1,8 +1,6 @@
-Post installation script to install some apps and setup android build environment for ubuntu.
-
-UBUNTU-      
-Download script    
-Open terminal    
-cd (to the directory where file is)      
-chmod a+x ubuntu.sh      
-sudo ./ubuntu.sh      
+# Mac OS & Linux post OS installation script  
+  
+**Setup**:  
+`chmod +x setup.sh`  
+`sudo bash setup.sh`
+  

@@ -1,0 +1,10 @@
+backports.lzma
+docopt
+humanize
+protobuf
+pycrypto
+pycryptodome
+pylint
+requests
+wheel
+zstandard

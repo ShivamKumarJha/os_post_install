@@ -1,0 +1,1 @@
+[[ -e ~/mybash.sh ]] && source ~/mybash.sh
