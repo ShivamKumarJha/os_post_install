@@ -1,7 +1,9 @@
 android-file-transfer
+android-studio
 angry-ip-scanner
 geany
 google-chrome
+intellij-idea-ce
 iterm2
 java
 libreoffice
