@@ -36,7 +36,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     cat confs/darwin/inputrc > ~/.inputrc
     cat confs/mybash.sh > ~/mybash.sh
     chmod +x ~/mybash.sh
-    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ "$EUID" -ne 0 ]; then
         echo "Please run as root"

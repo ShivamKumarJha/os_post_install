@@ -2,5 +2,5 @@
   
 **Setup**:  
 `chmod +x setup.sh`  
-`sudo bash setup.sh`
-  
+Mac: `bash setup.sh`  
+Linux: `sudo bash setup.sh`
