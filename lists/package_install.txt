@@ -1,5 +1,3 @@
-abootimg
-android-tools-fsutils
 aria2
 arj
 bc
@@ -40,7 +38,6 @@ libsdl1.2-dev
 libssl-dev
 libstdc++6
 libtinyxml2-dev
-libwxgtk3.0-dev
 libxml2
 libxml2-utils
 lzma
@@ -48,7 +45,6 @@ lzop
 megatools
 mousepad
 mpack
-npm
 openjdk-8-jdk
 openssh-server
 p7zip-full
@@ -56,10 +52,6 @@ p7zip-rar
 patchelf
 pinta
 pngcrush
-python-dev
-python-lzma
-python-pip
-python-setuptools
 python3-dev
 python3-pip
 python3-setuptools
