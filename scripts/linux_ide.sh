@@ -35,5 +35,5 @@ install_vscode() {
 
 [[ ! -d $HOME/ideac/ ]] && install_ideac
 [[ ! -d $HOME/android-studio/ ]] && install_androidstudio
-install_vscode
+[[ ! -e /bin/code ]] && install_vscode
 
