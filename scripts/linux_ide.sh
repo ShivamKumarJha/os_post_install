@@ -17,7 +17,18 @@ install_ideac() {
     tar -xvf ${PROJECT_DIR}/downloads/${FILE} -C $HOME/
     IDEACDIR="$(dirname "$(find $HOME/idea* -type f -name "product-info.json" | head -1)")"
     mv ${IDEACDIR} "$HOME/ideac"
-    cp -a ${PROJECT_DIR}/confs/linux/jetbrains-idea-ce.desktop ~/.local/share/applications/jetbrains-idea-ce.desktop
+    (
+        echo "[Desktop Entry]"
+        echo "Version=1.0"
+        echo "Type=Application"
+        echo "Name=IntelliJ IDEA Community Edition"
+        echo "Icon=$HOME/ideac/bin/idea.svg"
+        echo "Exec=\"$HOME/ideac/bin/idea.sh\" %f"
+        echo "Comment=Capable and Ergonomic IDE for JVM"
+        echo "Categories=Development;IDE;"
+        echo "Terminal=false"
+        echo "StartupWMClass=jetbrains-idea-ce"
+    ) > ~/.local/share/applications/jetbrains-idea-ce.desktop
     chmod +x ~/.local/share/applications/jetbrains-idea-ce.desktop
 }
 
@@ -27,7 +38,18 @@ install_androidstudio() {
     echo "Downloading Android Studio"
     aria2c -x 16 ${URL_ANDROID_STUDIO} -d ${PROJECT_DIR}/downloads -o ${FILE}
     tar -xvf ${PROJECT_DIR}/downloads/${FILE} -C $HOME/
-    cp -a ${PROJECT_DIR}/confs/linux/jetbrains-studio.desktop ~/.local/share/applications/jetbrains-studio.desktop
+    (
+        echo "[Desktop Entry]"
+        echo "Version=1.0"
+        echo "Type=Application"
+        echo "Name=Android Studio"
+        echo "Icon=$HOME/android-studio/bin/studio.svg"
+        echo "Exec=\"$HOME/android-studio/bin/studio.sh\" %f"
+        echo "Comment=The Drive to Develop"
+        echo "Categories=Development;IDE;"
+        echo "Terminal=false"
+        echo "StartupWMClass=jetbrains-studio"
+    ) > ~/.local/share/applications/jetbrains-studio.desktop
     chmod +x ~/.local/share/applications/jetbrains-studio.desktop
 }
 
