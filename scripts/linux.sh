@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null && pwd )"
+source ${PROJECT_DIR}/scripts/links.sh || exit 1
 
 docommon() {
     if [[ -e "/usr/bin/apt-get" ]]; then
@@ -53,7 +54,7 @@ chmod a+r /etc/udev/rules.d/51-android.rules
 service udev restart
 
 # more packages
-wget -O /usr/local/bin/gdrive https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64
+wget -O /usr/local/bin/gdrive ${URL_GDRIVE_LINUX}
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 chmod a+x /usr/local/bin/gdrive
 docommon
@@ -81,10 +82,5 @@ elif [[ -e "/usr/bin/pacman" ]]; then
     pacman -Syu --noconfirm transmission-gtk
     pacman -Syu --noconfirm bash-completion
 fi
-
-# VS Code
-aria2c -x16 https://az764295.vo.msecnd.net/stable/2aae1f26c72891c399f860409176fe435a154b13/code_1.44.0-1586345345_amd64.deb
-[[ -e "code_1.44.0-1586345345_amd64.deb" ]] && dpkg -i code_1.44.0-1586345345_amd64.deb
-rm -rf code_1.44.0-1586345345_amd64.deb
 
 docommon

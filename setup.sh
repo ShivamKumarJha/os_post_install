@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source scripts/links.sh || exit 1
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # xcode
     xcode-select --install
@@ -27,9 +29,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         brew install $ITEM
     done
     brew cleanup
+    # vscode
+    install_vscode_extensions
     # gdrive
     mkdir -p ~/bin/
-    aria2c -q -s 16 -x 16 https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-osx-x64 -d ~/bin/ -o gdrive
+    aria2c -q -s 16 -x 16 ${URL_GDRIVE_MAC} -d ~/bin/ -o gdrive
     chmod +x ~/bin/gdrive
     # bash
     cat confs/darwin/bash_profile >> ~/.zprofile
@@ -55,10 +59,4 @@ fi
 LIST=$( cat lists/pip.txt )
 for ITEM in $LIST; do
     pip3 install $ITEM
-done
-
-# vs code
-LIST=$( cat lists/vscode.txt )
-for ITEM in $LIST; do
-    code --user-data-dir $HOME --install-extension $ITEM
 done
