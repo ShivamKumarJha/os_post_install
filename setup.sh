@@ -40,6 +40,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     cat confs/darwin/inputrc > ~/.inputrc
     cat confs/mybash.sh > ~/mybash.sh
     chmod +x ~/mybash.sh
+    # compaudit
+    sudo chmod -R 755 /usr/local/share/zsh
+    sudo chmod -R 755 /usr/local/share/zsh/site-functions
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ "$EUID" -ne 0 ]; then
         echo "Please run as root"
