@@ -28,6 +28,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     for ITEM in $LIST; do
         brew install $ITEM
     done
+    brew tap homebrew/cask-fonts
+    brew cask install font-fira-code
     brew cleanup
     # vscode
     install_vscode_extensions
